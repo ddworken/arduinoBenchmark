@@ -15,9 +15,11 @@ void loop(){
 	dot(1);
 	int eepromWriteSpeed = testEepromWrite();
 	dot(1);
-	int additionSubtractionSpeed = testAddictionSubtraction();
+	int integerAdditionSubtractionSpeed = testIntegerAdditionSubtraction();
 	dot(1);
 	int floatingPointMultiplicationSpeed = testFloatingPointMultiplication();
+	dot(1);
+	int floatingPointDivisionSpeed = testFloatingPointDivision();
 	dot(1);
 	Serial.println(" ");
 	Serial.print("You scored a ");
@@ -27,11 +29,14 @@ void loop(){
 	Serial.print(eepromWriteSpeed);
 	Serial.println(" on the EEPROM write test (lower is better).");
 	Serial.print("You scored a ");
-	Serial.print(additionSubtractionSpeed);
+	Serial.print(integerAdditionSubtractionSpeed);
 	Serial.println(" on the integer addition subtraction test (lower is better).");
 	Serial.print("You scored a ");
 	Serial.print(floatingPointMultiplicationSpeed);
 	Serial.println(" on the floating point multiplication test (lower is better).");
+	Serial.print("You scored a ");
+	Serial.print(floatingPointDivisionSpeed);
+	Serial.println(" on the floating point division test (lower is better).");
 	while(true){
 		delay(1000);
 	}
@@ -62,39 +67,52 @@ int testEepromRead(){
 	return endVal-startVal;
 }
 
-int testAddictionSubtraction(){
+int testIntegerAdditionSubtraction(){
 	int val;
+	int volatile i;
+	int volatile k;
 	int startVal = millis();
-	for(int i = 0; i < 10000; i++){
-		val = i + 42;
+	for(int j = 0; j < 10; j++){
+		for(i = 0; i < 10000; i++){
+			val = i + 42;
+
+		}
+		for(k = 0; k < 10000; k++){
+			val = k - 42;
+		}
+		val = 0;
 	}
-	for(int i = 0; i < 10000; i++){
-		val = i - 42;
-	}
-	int newVal = val;
 	int endVal = millis();
 	return endVal-startVal;
 }
 
 int testFloatingPointMultiplication(){
 	float val = 42.4242;
+	int volatile j;
+	int volatile i;
 	int startVal = millis();
-	for(int i = 0; i < 10000; i++){
-		val=val*i;
-		val=val*i;
-		val=42.4242;
-		val=val*i;
-		val=val*i;
-		val=42.4242;
-		val=val*i;
-		val=val*i;
-		val=42.4242;
-		val=val*i;
-		val=val*i;
-		val=42.4242;
-		val=val*i;
-		val=val*i;
-		val=42.4242;
+	for(j = 0; j < 10; j++){
+		for(i = 0; i < 10000; i++){
+			val=val*i;
+			val=val*i;
+			val=42.4242;
+		}
+	}
+	int endVal = millis();
+	return endVal-startVal;
+}
+
+int testFloatingPointDivision(){
+	float val = 42.4242;
+	int volatile j;
+	int volatile i;
+	int startVal = millis();
+	for(j = 0; j < 10; j++){
+		for(i = 0; i < 10000; i++){
+			val=i/val;
+			val=i/val;
+			val=42.4242;
+		}
 	}
 	int endVal = millis();
 	return endVal-startVal;
