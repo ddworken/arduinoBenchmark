@@ -15,7 +15,10 @@ void loop(){
 	dot(1);
 	int eepromWriteSpeed = testEepromWrite();
 	dot(1);
-
+	int additionSubtractionSpeed = testAddictionSubtraction();
+	dot(1);
+	int floatingPointMultiplicationSpeed = testFloatingPointMultiplication();
+	dot(1);
 	Serial.println(" ");
 	Serial.print("You scored a ");
 	Serial.print(eepromReadSpeed);
@@ -23,6 +26,12 @@ void loop(){
 	Serial.print("You scored a ");
 	Serial.print(eepromWriteSpeed);
 	Serial.println(" on the EEPROM write test (lower is better).");
+	Serial.print("You scored a ");
+	Serial.print(additionSubtractionSpeed);
+	Serial.println(" on the integer addition subtraction test (lower is better).");
+	Serial.print("You scored a ");
+	Serial.print(floatingPointMultiplicationSpeed);
+	Serial.println(" on the floating point multiplication test (lower is better).");
 	while(true){
 		delay(1000);
 	}
@@ -51,6 +60,48 @@ int testEepromRead(){
 	}
 	int endVal = millis();
 	return endVal-startVal;
+}
+
+int testAddictionSubtraction(){
+	int val;
+	int startVal = millis();
+	for(int i = 0; i < 10000; i++){
+		val = i + 42;
+	}
+	for(int i = 0; i < 10000; i++){
+		val = i - 42;
+	}
+	int newVal = val;
+	int endVal = millis();
+	return endVal-startVal;
+}
+
+int testFloatingPointMultiplication(){
+	float val = 42.4242;
+	int startVal = millis();
+	for(int i = 0; i < 10000; i++){
+		val=val*i;
+		val=val*i;
+		val=42.4242;
+		val=val*i;
+		val=val*i;
+		val=42.4242;
+		val=val*i;
+		val=val*i;
+		val=42.4242;
+		val=val*i;
+		val=val*i;
+		val=42.4242;
+		val=val*i;
+		val=val*i;
+		val=42.4242;
+	}
+	int endVal = millis();
+	return endVal-startVal;
+}
+
+int ramSpeedTest(){
+	//String longString1 PROGMEM = "This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. This is a long string meant to use up a large amount of ram. ";
 }
 
 void dot(int j){
