@@ -11,4 +11,4 @@ Data
 ================
 | Arduino Model | EEPROM Read Score  | EEPROM Write Score | Addition/Subtraction Score | Floating Point Multiplication | Floating Point Division |
 | ------------- |:-------------:| -----:|-----:|-----:|-----:|
-| Arduino Uno   | 1868 | 1724 | | 1379
+| Arduino Uno   | 1868 | 1724 | 277 | 163 | 164 |
