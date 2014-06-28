@@ -1,5 +1,6 @@
 arduinoBenchmark
 ================
+###Note that the design/calculations of this benchmark have not been finalized yet. Any values/methods of calculating scores are subject to change. 
 A benchmarking suite meant to be run on Arduinos. This was created because there is very little concrete data comparing different Arduinos in a quantitative manner. 
 
 Usage
