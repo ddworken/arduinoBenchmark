@@ -9,6 +9,6 @@ Download benchmark.ino and open it in the Arduino IDE. Upload to the Arduino and
 
 Data
 ================
-| Arduino Model | EEPROM Read Score  | EEPROM Write Score | Addition/Subtraction Score | Floating Point Multiplication | Floating Point Division |
-| ------------- |:-------------:| -----:|-----:|-----:|-----:|
-| Arduino Uno   | 1868 | 1724 | 277 | 163 | 164 |
+| Arduino Model | EEPROM Read | EEPROM Write | Integer Addition/Subtraction | Integer Multiplication | Integer Division | Floating Point Addition/Subtraction |Floating Point Multiplication | Floating Point Division | 
+| ------------- |:-----------:| ------------:|-----------------------------:|-----------------------:|-----------------:| -----------------------------------:| ----------------------------:| -----------------------:|
+|Uno            | 1868        | 1724         | 138                          | 138                    | 3117             | 2845                                | 2374                         | 6557                    |
