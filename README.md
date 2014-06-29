@@ -1,3 +1,5 @@
+readme.md
+
 arduinoBenchmark
 ================
 ###Note that the design/calculations of this benchmark have not been finalized yet. Any values/methods of calculating scores are subject to change. 
@@ -9,6 +11,6 @@ Download benchmark.ino and open it in the Arduino IDE. Upload to the Arduino and
 
 Data
 ================
-| Arduino Model | EEPROM Read | EEPROM Write | Integer Addition/Subtraction | Integer Multiplication | Integer Division | Floating Point Addition/Subtraction |Floating Point Multiplication | Floating Point Division | 
-| ------------- |:-----------:| ------------:|-----------------------------:|-----------------------:|-----------------:| -----------------------------------:| ----------------------------:| -----------------------:|
-|Uno            | 1868        | 1724         | 138                          | 138                    | 3117             | 2845                                | 2374                         | 6557                    |
+| Arduino Model | EEPROM Read | EEPROM Write | Integer Addition/Subtraction | Integer Multiplication | Integer Division | Floating Point Addition/Subtraction |Floating Point Multiplication | Floating Point Division | Analog Read | 
+| ------------- |:-----------:| ------------:|-----------------------------:|-----------------------:|-----------------:| -----------------------------------:| ----------------------------:| -----------------------:| -----------:|
+|Uno            | 1868        | 1724         | 138                          | 138                    | 3117             | 2845                                | 2374                         | 6557                    | 1120        |
