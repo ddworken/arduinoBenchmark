@@ -27,31 +27,18 @@ void loop(){
 	dot(1);
 	int floatingPointAdditionSubtractionSpeed = testFloatingPointAdditionSubtraction();
 	dot(1);
+	int analogReadSpeed = testAnalogRead();
+	dot(1);
 	Serial.println(" ");
-	Serial.print("You scored a ");
-	Serial.print(eepromReadSpeed);
-	Serial.println(" on the EEPROM read test (lower is better).");
-	Serial.print("You scored a ");
-	Serial.print(eepromWriteSpeed);
-	Serial.println(" on the EEPROM write test (lower is better).");
-	Serial.print("You scored a ");
-	Serial.print(integerAdditionSubtractionSpeed);
-	Serial.println(" on the integer addition subtraction test (lower is better).");
-	Serial.print("You scored a ");
-	Serial.print(integerMultiplicationSpeed);
-	Serial.println(" on the integer multiplication test (lower is better).");
-	Serial.print("You scored a ");
-	Serial.print(integerDivisionSpeed);
-	Serial.println(" on the integer division test (lower is better).");
-	Serial.print("You scored a ");
-	Serial.print(floatingPointAdditionSubtractionSpeed);
-	Serial.println(" on the floating point addition subtraction test (lower is better).");
-	Serial.print("You scored a ");
-	Serial.print(floatingPointMultiplicationSpeed);
-	Serial.println(" on the floating point multiplication test (lower is better).");
-	Serial.print("You scored a ");
-	Serial.print(floatingPointDivisionSpeed);
-	Serial.println(" on the floating point division test (lower is better).");
+	output(eepromReadSpeed, "EEPROM read");
+	output(eepromWriteSpeed, "EEPROM write");
+	output(integerAdditionSubtractionSpeed, "integer addition subtraction");
+	output(integerMultiplicationSpeed, "integer multiplication");
+	output(integerDivisionSpeed, "integer division");
+	output(floatingPointAdditionSubtractionSpeed, "floating point addition subtraction");
+	output(floatingPointMultiplicationSpeed, "floating point multiplication");
+	output(floatingPointDivisionSpeed, "floating point division");
+	output(analogReadSpeed, "analog read");
 	while(true){
 		delay(1000);
 	}
@@ -188,9 +175,27 @@ int testFloatingPointDivision(){
 	return endVal-startVal;
 }
 
+int testAnalogRead(){
+	double volatile val;
+	int startVal = millis();
+	for(int i = 0; i < 5000; i++){
+		val=analogRead(1);
+		val=analogRead(1);
+	}
+	int endVal = millis();
+	return endVal-startVal;
+}
+
 void dot(int j){
 	for(int i = 0; i < j; i++){
 		Serial.print(".");
 	}
 }
 
+void output(int score, String nameForTest){
+	Serial.print(F("You scored a "));
+	Serial.print(score);
+	Serial.print(F(" on the "));
+	Serial.print(nameForTest);
+	Serial.println(F(" test (lower is better)"));
+}
