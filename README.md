@@ -11,4 +11,4 @@ Data
 | Arduino Model | EEPROM Read | EEPROM Write | Integer Addition/Subtraction | Integer Multiplication | Integer Division | Floating Point Addition/Subtraction |Floating Point Multiplication | Floating Point Division | Analog Read | 
 | ------------- |:-----------:| ------------:|-----------------------------:|-----------------------:|-----------------:| -----------------------------------:| ----------------------------:| -----------------------:| -----------:|
 |Uno            | 1868        | 1724         | 138                          | 138                    | 3117             | 2845                                | 2374                         | 6557                    | 1120        |
-|Micro          | 2213        | 1729         | 139                          | 141                    | 2945             | 2847                                | 2359                         | 6611                    | null        |
+|Micro          | 2213        | 1729         | 139                          | 141                    | 2945             | 2847                                | 2359                         | 6611                    | 1174        |
